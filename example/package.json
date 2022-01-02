@@ -1,0 +1,32 @@
+{
+	"name": "cli-utility-example",
+	"version": "0.2.0-alpha.4",
+	"description": "CLI for creating new apps with the Intouch Design System",
+	"repository": "https://github.com/intouchg/starter",
+	"author": "Intouch Group",
+	"license": "MIT",
+	"bin": {
+		"cli-utility-example": "./lib/cli.js"
+	},
+	"scripts": {
+		"prepare": "husky install",
+		"prettier": "prettier --write .",
+		"pretty-quick": "pretty-quick --staged"
+	},
+	"dependencies": {
+		"chalk": "4.1.2",
+		"commander": "8.3.0",
+		"fast-fuzzy": "1.11.1",
+		"got": "11.8.3",
+		"inquirer": "8.2.0",
+		"inquirer-autocomplete-prompt": "1.4.0",
+		"semver": "7.3.5",
+		"tar": "6.1.11"
+	},
+	"devDependencies": {
+		"@intouchg/prettier-config": "latest",
+		"husky": "7.0.4",
+		"prettier": "2.5.1",
+		"pretty-quick": "3.1.2"
+	}
+}
