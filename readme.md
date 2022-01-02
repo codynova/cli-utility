@@ -48,3 +48,7 @@ try {
 	console.log(error)
 }
 ```
+
+## Prior Art
+
+-   [create-next-app](https://github.com/vercel/next.js/tree/master/packages/create-next-app)
