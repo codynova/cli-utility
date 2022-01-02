@@ -1,6 +1,6 @@
 {
 	"name": "@novas/cli-utility",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"description": "NodeJS utilities and boilerplate for creating CLIs",
 	"main": "dist/index.cjs.js",
 	"module": "dist/index.esm.js",

@@ -9,17 +9,21 @@ export const downloadAndExtractGithub = (url: string) => {
 	const [, username, repo, tree, branch, ...paths] = new URL(
 		url
 	).pathname.split('/')
+
 	const filePath =
 		paths.length === 0 || (paths.length === 1 && paths[0] === '')
 			? ''
 			: path.join(...paths)
 
+	const fileExtStrip = path.extname(filePath).length > 0 ? 0 : 1
+
 	return promisify(Stream.pipeline)(
 		got.stream(
 			`https://codeload.github.com/${username}/${repo}/tar.gz/${branch}`
 		),
-		tar.extract({ strip: filePath ? filePath.split('/').length : 1 }, [
-			`${repo}-${branch}${filePath ? `/${filePath}` : ''}`,
-		])
+		tar.extract(
+			{ strip: filePath ? filePath.split('/').length + fileExtStrip : 1 },
+			[`${repo}-${branch}${filePath ? `/${filePath}` : ''}`]
+		)
 	)
 }
